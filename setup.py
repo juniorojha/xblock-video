@@ -54,6 +54,7 @@ setup(
     ],
     install_requires=[
         'XBlock>=0.4.10,<2.0.0',
+        'xblock-utils>=1.2.0',
         'requests>=2.9.1,<3.0.0',
         'babelfish>=0.5.5,<0.6.0',
     ],
