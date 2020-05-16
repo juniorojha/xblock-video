@@ -32,7 +32,7 @@ if __name__ == "__main__":
         pass
 
     from django.conf import settings
-    settings.INSTALLED_APPS += ("video_xblock", )
+    settings.INSTALLED_APPS += ("vimeo_xblock", )
 
     for noisy_logger, log_level in logging_level_overrides.iteritems():
         logging.getLogger(noisy_logger).setLevel(log_level)
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     paths = [arg for arg in args if arg[0] != '-']
     if not paths:
-        paths = ["video_xblock/tests/acceptance"]
+        paths = ["vimeo_xblock/tests/acceptance"]
     options = [arg for arg in args if arg not in paths]
     execute_from_command_line([sys.argv[0], "test"] + paths + options)

@@ -5,7 +5,7 @@ SELENIUM_BROWSER ?= chrome
 .PHONY=all,quality,test
 
 bower_dir := bower_components
-vendor_dir := video_xblock/static/vendor
+vendor_dir := vimeo_xblock/static/vendor
 vendored_js := video.js/dist/video.min.js\
 			 videojs-contextmenu-ui/dist/videojs-contextmenu-ui.min.js\
 			 videojs-contextmenu/dist/videojs-contextmenu.min.js\
@@ -30,25 +30,25 @@ clean: # Clean working directory
 test: test-py test-js test-acceptance ## Run unit and acceptance tests
 
 test-py: ## Run Python tests
-	nosetests video_xblock.tests.unit --with-coverage --cover-package=video_xblock
+	nosetests vimeo_xblock.tests.unit --with-coverage --cover-package=vimeo_xblock
 
 test-js: ## Run JavaScript tests
-	karma start video_xblock/static/video-xblock-karma.conf.js
+	karma start vimeo_xblock/static/video-xblock-karma.conf.js
 
 test-acceptance:
 	SELENIUM_BROWSER=$(SELENIUM_BROWSER) \
-	python run_tests.py video_xblock/tests/acceptance \
-	--with-coverage --cover-package=video_xblock
+	python run_tests.py vimeo_xblock/tests/acceptance \
+	--with-coverage --cover-package=vimeo_xblock
 
 quality: quality-py quality-js ## Run code quality checks
 
 quality-py:
 	pycodestyle . --format=pylint --max-line-length=120
 	pydocstyle
-	pylint -f colorized video_xblock
+	pylint -f colorized vimeo_xblock
 
 quality-js:
-	eslint video_xblock/static/js/
+	eslint vimeo_xblock/static/js/
 
 dev-install:
 	# Install package using pip to leverage pip's cache and shorten CI build time

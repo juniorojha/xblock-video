@@ -35,7 +35,7 @@ def package_data(pkg, roots):
     return {pkg: data}
 
 
-VERSION = get_version('video_xblock', '__init__.py')
+VERSION = get_version('vimeo_xblock', '__init__.py')
 DESCRIPTION = 'Video XBlock to embed videos hosted on different video platforms into your courseware'
 
 
@@ -45,7 +45,7 @@ setup(
     description=DESCRIPTION,
     license='GPL v3',
     packages=[
-        'video_xblock',
+        'vimeo_xblock',
     ],
     dependency_links=[
         # At the moment of writing PyPI hosts outdated version of xblock-utils, hence git
@@ -60,16 +60,16 @@ setup(
     ],
     entry_points={
         'xblock.v1': [
-            'video_xblock = video_xblock:VideoXBlock',
+            'vimeo_xblock = vimeo_xblock:VideoXBlock',
         ],
-        'video_xblock.v1': [
-            'youtube-player = video_xblock.backends.youtube:YoutubePlayer',
-            'wistia-player = video_xblock.backends.wistia:WistiaPlayer',
-            'brightcove-player = video_xblock.backends.brightcove:BrightcovePlayer',
-            'dummy-player = video_xblock.backends.dummy:DummyPlayer',
-            'vimeo-player = video_xblock.backends.vimeo:VimeoPlayer',
-            'html5-player = video_xblock.backends.html5:Html5Player',
+        'vimeo_xblock.v1': [
+            'youtube-player = vimeo_xblock.backends.youtube:YoutubePlayer',
+            'wistia-player = vimeo_xblock.backends.wistia:WistiaPlayer',
+            'brightcove-player = vimeo_xblock.backends.brightcove:BrightcovePlayer',
+            'dummy-player = vimeo_xblock.backends.dummy:DummyPlayer',
+            'vimeo-player = vimeo_xblock.backends.vimeo:VimeoPlayer',
+            'html5-player = vimeo_xblock.backends.html5:Html5Player',
         ]
     },
-    package_data=package_data("video_xblock", ["static", ]),
+    package_data=package_data("vimeo_xblock", ["static", ]),
 )
