@@ -326,7 +326,7 @@ class VideoXBlock(
                 **context
             )
         )
-        frag.add_javascript(resource_string("static/js/student-view/video-xblock.js"))
+        frag.add_javascript(resource_string("static/js/student-view/vimeo-xblock.js"))
         frag.add_css(resource_string("static/css/student-view.css"))
         frag.initialize_js('VideoXBlockStudentViewInit')
         return frag

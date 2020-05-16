@@ -40,7 +40,7 @@ DESCRIPTION = 'Video XBlock to embed videos hosted on different video platforms 
 
 
 setup(
-    name='video-xblock',
+    name='vimeo-xblock',
     version=VERSION,
     description=DESCRIPTION,
     license='GPL v3',
